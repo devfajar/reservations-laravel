@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
 
     // Company
-    Route::resource('companies', CompanyController::class);
+    Route::resource('companies', CompanyController::class)->middleware('isAdmin');
 });
 
 require __DIR__.'/auth.php';
