@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
 
     // Company
     Route::resource('companies', CompanyController::class)->middleware('isAdmin');
+    Route::resource('companies.users', CompanyController::class)->except('show');
 });
 
 require __DIR__.'/auth.php';
